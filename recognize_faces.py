@@ -1272,7 +1272,7 @@ class EnhancedLoginApp:
             recognition_thread.start()
             
         def recognition_loop():
-            """Face recognition loop for team members"""
+                      """Face recognition loop for team members"""
             try:
                 cap[0] = cv2.VideoCapture(0)
                 cap[0].set(cv2.CAP_PROP_FRAME_WIDTH, 640)
