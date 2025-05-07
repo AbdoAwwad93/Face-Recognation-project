@@ -440,7 +440,7 @@ class FaceLoginSystem:
         if not os.path.exists(user_training_dir):
             return []
         
-        return [f for f in os.listdir(user_training_dir) if f.endswith(('.jpg', '.jpeg', '.png'))]
+        return [f for f in os.listdir(user_training_dir) if f.endswith(('.jpg', '.jpeg', '.png','.JPG'))]
     
     def delete_training_image(self, username, image_name):
         """Delete a training image for a user"""
@@ -471,7 +471,7 @@ class FaceLoginSystem:
                 
             # Process each image in the user's directory
             for image_name in os.listdir(user_dir):
-                if not image_name.endswith(('.jpg', '.jpeg', '.png')):
+                if not image_name.endswith(('.jpg', '.jpeg', '.png','.JPG')):
                     continue
                     
                 image_path = os.path.join(user_dir, image_name)
@@ -534,7 +534,7 @@ class FaceLoginSystem:
                 
             # Process each image in the member's directory
             for image_name in os.listdir(member_dir):
-                if not image_name.endswith(('.jpg', '.jpeg', '.png')):
+                if not image_name.endswith(('.jpg', '.jpeg', '.png','')):
                     continue
                     
                 image_path = os.path.join(member_dir, image_name)
@@ -1272,7 +1272,7 @@ class EnhancedLoginApp:
             recognition_thread.start()
             
         def recognition_loop():
-                      """Face recognition loop for team members"""
+            """Face recognition loop for team members"""
             try:
                 cap[0] = cv2.VideoCapture(0)
                 cap[0].set(cv2.CAP_PROP_FRAME_WIDTH, 640)
